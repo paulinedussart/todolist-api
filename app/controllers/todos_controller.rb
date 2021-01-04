@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+	
 	def index
 		@todos = Todo.all.order("created_at DESC")
 		render json: @todos
@@ -8,7 +9,7 @@ class TodosController < ApplicationController
 		@todo = Todo.new(todo_params)
 
     if @todo.save
-      render json: @todo, status: :created
+      render json: @todo
     else
       render json: @todo.errors, status: :unprocessable_entity
     end
