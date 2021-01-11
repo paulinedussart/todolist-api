@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Todo.delete_all
 
-Todo.create(title: "Prepare your ski bag for tomorrow", done: false)
-Todo.create(title: "Buy fruits and vegetables", done: false)
+Todo.create(title: "Prepare your ski bag for tomorrow", done: true)
+Todo.create(title: "Buy fruits and vegetables", done: true)
+Todo.create(title: "Keep learning React testing and CSS framework", done: false)
 Todo.create(title: "Learn Rails Rest API with React Frontend", done: false)
 
-puts "Success: Todos created"
+puts "Success: Todos #{Todo.all.count} created"

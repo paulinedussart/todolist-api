@@ -3,7 +3,13 @@ class TodosController < ApplicationController
 	def index
 		@todos = Todo.all.order("created_at DESC")
 		render json: @todos
-  end
+	end
+	
+	def show
+		 @todo = Todo.find(params[:id])
+		 render json: @todo
+	end 
+
 
 	def create
 		@todo = Todo.new(todo_params)
